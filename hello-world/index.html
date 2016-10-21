@@ -8,10 +8,15 @@
 
 <script type="text/jsx">
     //define a react component class
-    var HelloWorld = React.createClass({});
+    var HelloWorld = React.createClass({
+      render: function(){
+        return <div>HelloWorld</div>
+      }
+    });
 
     //ask react to render this class
     var element = React.createElement(HelloWorld);
 
     //after rendering, tell where to place the rendered class in the DOM
+    ReactDOM.render(element, document.body);
 </script>
