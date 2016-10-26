@@ -1,0 +1,58 @@
+<head>
+    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+    <div class="target col-sm-6 col-md-4">
+
+    </div>
+    </div>
+  </div>
+
+</body>
+
+<script type="text/jsx">
+    //define a react component class
+    var Badge = React.createClass({
+        render: function() {
+            return  <button className="btn btn-primary" type="button">
+                        {this.props.title}
+                      <span className="badge">{this.props.number}</span>
+                    </button>
+        }
+    });
+
+    var Thumbnail = React.createClass({
+      render: function(){
+        return <div className="thumbnail">
+                  <img src={this.props.imageUrl}/>
+                  <div className="caption">
+                    <h3>{this.props.header}</h3>
+                    <p>{this.props.description}</p>
+                    <p>
+                    <Badge title={this.props.title} number={this.props.number}/>
+                    </p>
+                  </div>
+               </div>
+      }
+    });
+
+    var options={
+      title:'Tutorials ',
+      number:32,
+      header:'Learning ReactJS',
+      description:'React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.',
+      imageUrl:'https://assets.toptal.io/uploads/blog/category/logo/291/react.png'
+    };
+
+    //ask react to render this class
+    var element = React.createElement(Thumbnail, options);
+
+    //after rendering, tell where to place the rendered class in the DOM
+    ReactDOM.render(element, document.querySelector('.target'));
+</script>
