@@ -7,11 +7,6 @@
 
 <body>
   <div class="container">
-    <div class="row">
-    <div class="col-md-4 target">
-
-    </div>
-    </div>
   </div>
 
 </body>
@@ -29,7 +24,9 @@
 
     var Thumbnail = React.createClass({
       render: function(){
-        return <div className="thumbnail">
+        return <div className="row">
+        <div className="col-sm-6 col-md-4">
+        <div className="thumbnail">
                   <img src={this.props.imageUrl}/>
                   <div className="caption">
                     <h3>{this.props.header}</h3>
@@ -38,7 +35,7 @@
                     <Badge title={this.props.title} number={this.props.number}/>
                     </p>
                   </div>
-               </div>
+               </div></div></div>
       }
     });
 
@@ -71,5 +68,5 @@
     var element = React.createElement(ThumbnailList, options);
 
     //after rendering, tell where to place the rendered class in the DOM
-    ReactDOM.render(element, document.querySelector('.target'));
+    ReactDOM.render(element, document.querySelector('.container'));
 </script>
