@@ -21,9 +21,10 @@ gulp.task('default', function(){
     if(file) gutil.log('Recompiling '+ file);
     return bundler
       .bundle()
-      .on('error',gutil.log.bind(gutil,'browserify ERROR'))
+      .on('error', gutil.log.bind(gutil,'browserify ERROR'))
       .pipe(source('main.js'))
       .pipe(gulp.dest('./'));
   };
-  build().bundler.on('update',build)
+  build();
+  bundler.on('update', build);
 });

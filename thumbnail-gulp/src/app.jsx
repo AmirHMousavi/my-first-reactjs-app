@@ -1,3 +1,6 @@
+var React = require('react');
+var ThumbnailList = require('./thumbnail-list.jsx');
+
 var options={
   data:[
         { title:'Tutorials ',
