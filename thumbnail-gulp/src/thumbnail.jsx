@@ -3,8 +3,7 @@ var Badge = require('./badge.jsx');
 
 module.exports = React.createClass({
   render: function(){
-    return <div className="row">
-    <div className="col-sm-6 col-md-4">
+    return <div className="col-sm-6 col-md-4">
     <div className="thumbnail">
               <img src={this.props.imageUrl}/>
               <div className="caption">
@@ -14,6 +13,6 @@ module.exports = React.createClass({
                 <Badge title={this.props.title} number={this.props.number}/>
                 </p>
               </div>
-           </div></div></div>
+           </div></div>
   }
 });
